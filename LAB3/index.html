@@ -1,0 +1,67 @@
+<html lang="en">
+    <header>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <style>
+            .red{
+                color: red;
+            }
+        </style>
+    </header>
+    <body>
+        <div id="div1">hello !!</div>
+        <button id="btn1">click me..</button>
+        <hr>
+        <div>
+            <input type="text" class="in1">
+            <input type="text" class="in1">
+            <input type="text" class="in1 ">
+        </div>
+        <div>
+            <button id="btn2">btn2</button>
+            <button id="btn3">color</button>
+        </div>
+        <div id="div_form"></div>
+    </body>
+</html>
+<script type="text/javascript">
+    var num = 10;
+    let name = 'win';
+    const no = 10.45;
+    let array = [10, 11, 12, 'text', 'test'];
+    const obj = {
+        name: 'test',
+        age: 22
+    };
+    const objTest = {
+        data: [
+            {name: 'text', gpa: 3.25}, 
+            {name: 'darwin', age: 23, gpa: 3.66}
+        ]
+    };
+    console.log(name);
+    console.log(array[1]);
+    console.log(objTest.data[1]);
+
+    document.getElementById("div1").innerHTML = name;
+
+    function add(a, b){
+        return a + b ;
+    }
+    console.log(add(5,5));
+
+    $(function () {
+        $("#div1").text(num);
+        $("#btn2").click(
+            function () {
+                $(".in1").val("test");
+            }
+        );
+        $("#btn3").bind(
+            "click",() => {
+                $(".in1:even").addClass("red");
+            }
+        );
+        $("#div_form").load("./pages/form.html");
+    });
+
+</script>

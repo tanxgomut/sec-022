@@ -1,0 +1,27 @@
+<form action="">
+    <input type="text" name="user">
+    <select name="dress" id="">
+        <option value="">เลือก</option>
+        <option value="1">test</option>
+        <option value="2">text</option>
+        <option value="3">class</option>
+    </select>
+    <button type="submit">submit</button>
+</form>
+
+<script>
+    $("form").submit(
+        (e) => {
+            e.preventDefault();
+            let form = $(this);
+            $.ajax({
+                data: form.serialize(),
+                url: "index.html",
+                method: "GET" ,
+                success: function (data){
+                    console.log(data);
+                }
+            });
+        }
+    );
+</script>
