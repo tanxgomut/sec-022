@@ -1,0 +1,9 @@
+version: '3'
+services:
+  php-apaache:
+    container_name: php-apaache
+    image: php:7.4.33-zts-alpine
+    volumes:
+      - ./php://var/www/html/
+    ports:
+      - 8005:80
